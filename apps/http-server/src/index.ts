@@ -1,6 +1,6 @@
+import type { NextFunction, Request, Response } from "express";
 import express from "express";
 import mongoose, { Schema } from "mongoose";
-import type { Request, Response, NextFunction } from "express";
 import dns from "node:dns";
 
 dns.setServers(["1.1.1.1", "8.8.8.8"]);
@@ -8,7 +8,7 @@ dns.setServers(["1.1.1.1", "8.8.8.8"]);
 
 
 async function connectMongo() {
-    await mongoose.connect("mongodb+srv://brijesh:LnBr1Wpy9ViHHjnB@ci-cd.uf4mdvs.mongodb.net/")
+    await mongoose.connect("mongodb+srv://brijesh:LnBr1Wpy9ViHHjnB@ci-cd.uf4mdvs.mongodb.net/cd_test")
 
     console.log("Connected to mongo");
 

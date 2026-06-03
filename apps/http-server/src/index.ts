@@ -8,7 +8,10 @@ dns.setServers(["1.1.1.1", "8.8.8.8"]);
 
 
 async function connectMongo() {
-    await mongoose.connect("mongodb+srv://brijesh:LnBr1Wpy9ViHHjnB@ci-cd.uf4mdvs.mongodb.net/cd_test")
+    await mongoose.connect("mongodb+srv://brijesh:LnBr1Wpy9ViHHjnB@ci-cd.uf4mdvs.mongodb.net/cd_test", {
+        tls: true,
+        tlsAllowInvalidCertificates: true, // only for dev
+    })
 
     console.log("Connected to mongo");
 

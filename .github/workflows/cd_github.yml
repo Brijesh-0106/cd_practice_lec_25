@@ -1,0 +1,11 @@
+name: CD using GitHub actions
+on:
+  push:
+    branches: [main]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: deploy code to ec2
+        run: |
+          echo "Welcome to daily ci/cd pipeline"

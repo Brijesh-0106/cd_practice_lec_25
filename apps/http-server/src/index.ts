@@ -5,17 +5,9 @@ import dns from "node:dns";
 
 dns.setServers(["1.1.1.1", "8.8.8.8"]);
 
-
-
 async function connectMongo() {
-    await mongoose.connect("mongodb+srv://brijesh:LnBr1Wpy9ViHHjnB@ci-cd.uf4mdvs.mongodb.net/cd_test", {
-        tls: true,
-        tlsAllowInvalidCertificates: true,
-        serverSelectionTimeoutMS: 5000,
-    })
-
+    await mongoose.connect("mongodb+srv://brijesh:LnBr1Wpy9ViHHjnB@ci-cd.uf4mdvs.mongodb.net/cd_test")
     console.log("Connected to mongo");
-
 }
 
 const userSchema = new Schema({
@@ -53,5 +45,5 @@ app.get('/addUser', async (req: Request, res: Response) => {
 })
 
 app.listen(3001, () => {
-    console.log("Server is running on port 3000")
+    console.log("Server is running on port 3001")
 })
